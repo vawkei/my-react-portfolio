@@ -1,0 +1,97 @@
+.main-container{
+    width: 100%;
+}
+.main-container h2{
+    text-align: left;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: 3rem auto;
+    gap: 3rem;    
+}
+.contact-form{
+    padding: 1rem;
+    background-color: black;
+    border: 0.1px transparent #aaa;
+    border-radius: 6px;
+    width: 45%;
+}
+form h4{
+    text-align: center;
+}
+.control{
+    padding: 1rem;
+}
+.control label{
+    display: block;
+    margin-bottom: 1rem;
+    color: green;
+}
+.control input, textarea{
+    width: 100%;
+    display: block;
+    border-radius: 6px;
+    background-color: transparent;
+    color: white;
+    border: 0.1px solid #aaa;
+    font: inherit;
+    padding: 0.5rem;
+}
+.action{
+    text-align: center;
+}
+.action button{
+    width: 100%;
+    border-radius: 6px;
+    background-color: green;
+    padding: 0.5rem;
+}
+.action button:hover{
+    background-color: white;
+}
+
+.address-section{
+    margin-top: 0;
+    padding: 1rem;
+    width: 45%;
+}
+
+
+.paragraph{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+.paragraph p{
+    padding: 1rem 0rem;
+}
+.invalid input{
+    border: 1px solid red;
+}
+.invalid textarea{
+    border: 1px solid red;
+}
+
+@media screen and (max-width:768px){
+    .main-container h2{
+        text-align: center;
+    }
+    .container{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+    .contact-form{
+        width: 100%;
+    }
+    .address-section{
+        width: 100%;
+    }
+    .address-section .paragraph{
+        width: 100%;
+        margin-bottom: 0.3rem;
+    }
+}
