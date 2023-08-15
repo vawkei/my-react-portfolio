@@ -1,7 +1,12 @@
 import classes from "./Contact.module.css";
 import { MdOutlineLocationOn } from "react-icons/md";
 import { AiOutlineMail } from "react-icons/ai";
-import { useState, useRef } from "react";
+import { useState, useRef, Fragment } from "react";
+import emailjs from "@emailjs/browser";
+import { useNavigate } from "react-router-dom";
+import { motion } from "framer-motion";
+import { useMediaQuery } from "react-responsive";
+
 
 const Contact = () => {
   const [formInputValidity, setFormInputValidity] = useState({
@@ -15,6 +20,13 @@ const Contact = () => {
   const emailInputRef = useRef();
   const subjectInputRef = useRef();
   const messageInputRef = useRef();
+
+  const form = useRef();
+
+  const isMobile = useMediaQuery({ maxWidth: 768 });
+  //const isMobile = useMediaQuery({ maxWidth: 768 });
+
+  const navigate = useNavigate();
 
   const submitHandler = (e) => {
     e.preventDefault();
@@ -46,96 +58,259 @@ const Contact = () => {
       console.log("Please fill out the inputs");
       return;
     }
-    console.log({
-      name: enteredName,
-      email: enteredEmail,
-      subject: enteredSubject,
-      message: enteredMessage,
-    });
+    // console.log({
+    //   name: enteredName,
+    //   email: enteredEmail,
+    //   subject: enteredSubject,
+    //   message: enteredMessage,
+    // });
+
+    // emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', form.current, 'YOUR_PUBLIC_KEY')
+    emailjs
+      .sendForm(
+        process.env.REACT_APP_EMAILJS_YOUR_SERVICE_ID,
+        process.env.REACT_APP_EMAILJS_YOUR_TEMPLATE_ID,
+        form.current,
+        process.env.REACT_APP_EMAILJS_YOUR_PUBLIC_KEY
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+          navigate("/");
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
   };
 
   return (
     <div className={classes["main-container"]}>
-      <h2>Contact</h2>
-      <div className={classes.container}>
-        <div className={classes["contact-form"]}>
-          <form onSubmit={submitHandler}>
-            <h4>Contact Form</h4>
-           
-           
-            <div
-              className={`${classes.control} ${
-                formInputValidity.name ? "" : classes.invalid
-              }`}>
-              <label htmlFor="">Name</label>
-              <input
-                type="text"
-                placeholder="Please enter your name"
-                ref={nameInputRef}
-              />
-              {!formInputValidity.name && (
-                <p style={{ color: "red" }}>name input should be filled</p>
-              )}
+      {isMobile ? (
+        <Fragment>
+          <h2>Contact</h2>
+          <div className={classes.container}>
+            <div className={classes["contact-form"]}>
+              <motion.form
+                onSubmit={submitHandler}
+                ref={form}
+                initial={{ x: -600 }}
+                animate={{
+                  x: 0,
+                  transition: {
+                    delay: 1,
+                    duration: 6,
+                    ease: "easeInOut",
+                    type: "spring",
+                    stiffness: 100,
+                  },
+                }}>
+                <h4>Contact Form</h4>
+
+                <div
+                  className={`${classes.control} ${
+                    formInputValidity.name ? "" : classes.invalid
+                  }`}>
+                  <label htmlFor="">Name</label>
+                  <input
+                    type="text"
+                    placeholder="Please enter your name"
+                    ref={nameInputRef}
+                    name="user_name"
+                  />
+                  {!formInputValidity.name && (
+                    <p style={{ color: "red" }}>name input should be filled</p>
+                  )}
+                </div>
+
+                <div
+                  className={`${classes.control} ${
+                    formInputValidity.email ? "" : classes.invalid
+                  }`}>
+                  <label htmlFor="">Email</label>
+                  <input
+                    type="text"
+                    placeholder="Please enter your email address"
+                    ref={emailInputRef}
+                    name="user_email"
+                  />
+                  {!formInputValidity.email && (
+                    <p style={{ color: "red" }}>email input should be filled</p>
+                  )}
+                </div>
+
+                <div
+                  className={`${classes.control} ${
+                    formInputValidity.subject ? "" : classes.invalid
+                  }`}>
+                  <label htmlFor="">Subject</label>
+                  <input
+                    type="text"
+                    placeholder="subject of the email"
+                    ref={subjectInputRef}
+                    name="subject"
+                  />
+                  {!formInputValidity.subject && (
+                    <p style={{ color: "red" }}>
+                      state the subject of your mail
+                    </p>
+                  )}
+                </div>
+
+                <div
+                  className={`${classes.control} ${
+                    formInputValidity.message ? "" : classes.invalid
+                  }`}>
+                  <label htmlFor="">Message</label>
+                  <textarea
+                    name="user_message"
+                    id=""
+                    rows="5"
+                    ref={messageInputRef}></textarea>
+                  {!formInputValidity.message && (
+                    <p style={{ color: "red" }}>drop a message</p>
+                  )}
+                </div>
+
+                <div className={classes.action}>
+                  <button>Send</button>
+                </div>
+              </motion.form>
             </div>
 
             <div
-              className={`${classes.control} ${
-                formInputValidity.email ? "" : classes.invalid
-              }`}>
-              <label htmlFor="">Email</label>
-              <input
-                type="text"
-                placeholder="Please enter your email address"
-                ref={emailInputRef}
-              />
-              {!formInputValidity.email && (
-                <p style={{ color: "red" }}>email input should be filled</p>
-              )}
+              className={classes["address-section"]}
+              >
+              <h4>Address</h4>
+              <div className={classes.paragraph}>
+                <MdOutlineLocationOn />
+                <p>Delta State, Nigeria.</p>
+              </div>
+              <div className={classes.paragraph}>
+                <AiOutlineMail />
+                <p>vokes9810@gmail.com</p>
+              </div>
             </div>
-
-            <div
-              className={`${classes.control} ${
-                formInputValidity.subject ? "" : classes.invalid
-              }`}>
-              <label htmlFor="">Subject</label>
-              <input type="text" placeholder="subject of the email" ref={subjectInputRef} />
-              {!formInputValidity.subject && (
-                <p style={{ color: "red" }}>state the subject of your mail</p>
-              )}
-            </div>
-
-            <div
-              className={`${classes.control} ${
-                formInputValidity.message ? "" : classes.invalid
-              }`}>
-              <label htmlFor="">Message</label>
-              <textarea name="" id="" rows="5" ref={messageInputRef}></textarea>
-              {!formInputValidity.message && (
-                <p style={{ color: "red" }}>drop a message</p>
-              )}
-            </div>
-            
-            
-            <div className={classes.action}>
-              <button>Send</button>
-            </div>
-          
-          </form>
-        
-        </div>
-        
-        <div className={classes["address-section"]}>
-          <h4>Address</h4>
-          <div className={classes.paragraph}>
-            <MdOutlineLocationOn />
-            <p>Delta State, Nigeria.</p>
           </div>
-          <div className={classes.paragraph}>
-            <AiOutlineMail />
-            <p>vokes9810@gmail.com</p>
+        </Fragment>
+      ) : (
+        <Fragment>
+          <h2>Contact</h2>
+          <div className={classes.container}>
+            <div className={classes["contact-form"]}>
+              <motion.form
+                onSubmit={submitHandler}
+                ref={form}
+                initial={{ y: -800 }}
+                animate={{
+                  y: 0,
+                  transition: {
+                    delay: 1,
+                    duration: 6,
+                    ease: "easeInOut",
+                    type: "spring",
+                    stiffness: 100,
+                  },
+                }}>
+                <h4>Contact Form</h4>
+
+                <div
+                  className={`${classes.control} ${
+                    formInputValidity.name ? "" : classes.invalid
+                  }`}>
+                  <label htmlFor="">Name</label>
+                  <input
+                    type="text"
+                    placeholder="Please enter your name"
+                    ref={nameInputRef}
+                    name="user_name"
+                  />
+                  {!formInputValidity.name && (
+                    <p style={{ color: "red" }}>name input should be filled</p>
+                  )}
+                </div>
+
+                <div
+                  className={`${classes.control} ${
+                    formInputValidity.email ? "" : classes.invalid
+                  }`}>
+                  <label htmlFor="">Email</label>
+                  <input
+                    type="text"
+                    placeholder="Please enter your email address"
+                    ref={emailInputRef}
+                    name="user_email"
+                  />
+                  {!formInputValidity.email && (
+                    <p style={{ color: "red" }}>email input should be filled</p>
+                  )}
+                </div>
+
+                <div
+                  className={`${classes.control} ${
+                    formInputValidity.subject ? "" : classes.invalid
+                  }`}>
+                  <label htmlFor="">Subject</label>
+                  <input
+                    type="text"
+                    placeholder="subject of the email"
+                    ref={subjectInputRef}
+                    name="subject"
+                  />
+                  {!formInputValidity.subject && (
+                    <p style={{ color: "red" }}>
+                      state the subject of your mail
+                    </p>
+                  )}
+                </div>
+
+                <div
+                  className={`${classes.control} ${
+                    formInputValidity.message ? "" : classes.invalid
+                  }`}>
+                  <label htmlFor="">Message</label>
+                  <textarea
+                    name="user_message"
+                    id=""
+                    rows="5"
+                    ref={messageInputRef}></textarea>
+                  {!formInputValidity.message && (
+                    <p style={{ color: "red" }}>drop a message</p>
+                  )}
+                </div>
+
+                <div className={classes.action}>
+                  <button>Send</button>
+                </div>
+              </motion.form>
+            </div>
+
+            <motion.div
+              className={classes["address-section"]}
+              initial={{ y: 600 }}
+              animate={{
+                y: 0,
+                transition: {
+                  delay: 1,
+                  duration: 6,
+                  ease: "easeInOut",
+                  type: "spring",
+                  stiffness: 100,
+                },
+              }}>
+              <h4>Address</h4>
+              <div className={classes.paragraph}>
+                <MdOutlineLocationOn />
+                <p>Delta State, Nigeria.</p>
+              </div>
+              <div className={classes.paragraph}>
+                <AiOutlineMail />
+                <p>vokes9810@gmail.com</p>
+              </div>
+            </motion.div>
           </div>
-        </div>
-      </div>
+        </Fragment>
+      )}
     </div>
   );
 };

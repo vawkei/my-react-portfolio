@@ -2,6 +2,14 @@
     text-align: center;
     height: 4rem;
     font-size: 1rem;
+    margin-bottom: 6rem;
+    /* margin-bottom: 1.5rem; */
+}
+.socials{
+    display: flex;
+    justify-content: center;
+    padding: 0.5rem;
+    gap: 2rem;
 }
 
 

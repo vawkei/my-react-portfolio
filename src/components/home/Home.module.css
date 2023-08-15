@@ -3,6 +3,15 @@
     width: 100%;
     align-items: center;
     justify-content: space-around;
+    animation-name:fadeIn;
+    animation-duration: 25s;
+}
+.icons{
+    padding: 3rem;
+    margin-top: 11rem;
+}
+.icon{
+    margin-top: 1rem;
 }
 .name-container{
     width: 50%;
@@ -32,6 +41,11 @@ span{
 
 }
 
+@keyframes fadeIn{
+    from{opacity: 0;}
+    to{opacity: 1;}
+}
+
 
 /* MOBILE RESPONSIVENESS */
 @media screen and (max-width:768px){
@@ -41,6 +55,9 @@ span{
     }
     .name-container{
         z-index: 300;
+    }
+    .icons{
+        display: none;
     }
 
     .image-container{

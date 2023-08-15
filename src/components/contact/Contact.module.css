@@ -1,15 +1,16 @@
 .main-container{
     width: 100%;
+    margin-top: 0;    
 }
 .main-container h2{
-    text-align: left;
+    text-align: center;
 }
 
 .container {
     display: flex;
     justify-content: center;
     width: 100%;
-    margin: 3rem auto;
+    margin: 0 auto;
     gap: 3rem;    
 }
 .contact-form{
@@ -89,6 +90,9 @@ form h4{
     }
     .address-section{
         width: 100%;
+        margin-top: 1.5rem;
+        z-index: 1000;
+        
     }
     .address-section .paragraph{
         width: 100%;
