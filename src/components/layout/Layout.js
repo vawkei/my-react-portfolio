@@ -11,7 +11,7 @@ const Layout = (props) => {
           width: "90%",
           // maxWidth: "42rem",
           maxWidth: "50rem",
-          margin: "3rem auto",
+          margin: "5rem auto",
         
         }}>
         {props.children}

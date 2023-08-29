@@ -1,25 +1,29 @@
 import classes from "./About.module.css";
 import profilepix from "../../assets/profilepix.jpg";
+import profilePix from "../../assets/profilepix-removebg.png";
 import { motion } from "framer-motion";
+import {useMediaQuery} from "react-responsive";
+
+
 
 const line1 = "World! Say Hello to Voke.";
 const line2 =
-  "I am Voke, a frontend developer who goes by the name of HowZ, House of webz.";
+  "I am Voke, a frontend developer who's known in the digital sphere as HowZ, HouseofwebZ.";
 const line3 =
-  "I am also a Fullstack aspirant who is really obsessed with the technologies used in building the web.";
+  "I have a heart that beats for the frontend, but it usually feels alive when I hear or read about backend technologies. I'm a Fullstack aspirant, who is really obsessed about the technologies used in building the web. Feel free to call it a beautiful obsession.";
 const line4 =
-  "Passionate about the front end, but usually light up whenever I hear anything concerning the backend.";
-const line5 =
-  "When I am not writing web codes or studying web codes, I usually watch football.";
-const line6 = "Or watching a thriller type or crime type TV series.";
-const line7 = "Or could be occupied playing Playstation.";
-const line8 =
-  "I am actively seeking a frontend developer role in an organization where I can apply my creativity. I am also available for work on frontend projects as a freelancer.";
+  "When I'm not writing web codes or studying web codes,";
+const line5 = "you'll find me watching football or immersed in captivating thrillers and crime TV series/movies.";
+const line6 = "Or I might be having a good time on a Playstation.";
+const line7 =
+  "I'm actively seeking a frontend developer role as a React.js developer in an organization, where I can channel my creativity and skills into building stunning user interfaces.";
+const line8 ="Additionally, I'm open to freelance opportunities for React projects.";
 const line9 ="And yeah! Coding is not a job to me, Coding is my life.";
-const line10 ="Pleased to meet you.";
+const line10 ="I'm pleased to make your acquaintance.";
+const line11 = "Now let's get this party started...";
 
 const containerVariant = {
-  hidden: { x: -900 },
+// i set no hidden property for the container
   visible: {
     x: 0,
     transition: { type: "spring", stiffness: 100, delayChildren: 1.7 },
@@ -39,6 +43,9 @@ const letters = {
 };
 
 const About = () => {
+
+  const isMobile = useMediaQuery({maxWidth:640});
+
   return (
     <motion.div
       className={classes.container}
@@ -47,11 +54,19 @@ const About = () => {
       animate="visible">
 
       <h2>About Me</h2>
+{/*===================== IMAGE =====================*/}
       <div className={classes.about}>
-        <div className={classes.image}>
+        {isMobile ?(
+          <div className={classes.image}>
+          <img src={profilePix} alt={profilePix} />
+        </div>
+        ):(
+          <div className={classes.image}>
           <img src={profilepix} alt={profilepix} />
         </div>
+        )}
         
+{/*===================== DESCRIPTION =====================*/}        
         <motion.div className={classes["about-desc"]} variants={sentence}>
           {line1.split("").map((character, index) => {
             return (
@@ -126,6 +141,14 @@ const About = () => {
           })}
           <br />
           {line10.split("").map((character, index) => {
+            return (
+              <motion.span key={index} variants={letters}>
+                {character}
+              </motion.span>
+            );
+          })}
+          <br />
+          {line11.split("").map((character, index) => {
             return (
               <motion.span key={index} variants={letters}>
                 {character}

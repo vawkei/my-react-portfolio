@@ -135,3 +135,156 @@ export default SvgComponent;
 // };
 
 // export default Skills;
+
+
+
+
+
+
+// import classes from "./Projects.module.css";
+// import { DUMMYPROJECTS } from "./ProjectData";
+// import { Link } from "react-router-dom";
+// import Card from "../../ui/card/Card";
+// import { motion } from "framer-motion";
+// import { useMediaQuery } from "react-responsive";
+// import { Fragment } from "react";
+
+// const Projects = () => {
+//   const isMobile768px = useMediaQuery({maxWidth:768});
+
+//   const data = DUMMYPROJECTS.map((x) => {
+//     return (
+//       <Fragment>
+//       {isMobile768px ? (
+//         <motion.div
+//         // initial={{x:-340}}
+//         // whileInView={{x:0,transition:{delay:1,type:"spring",stiffness:100}}}
+//         initial={{x:-368}}
+//         whileInView={{x:0,transition:{delay:1,type:"spring",stiffness:100}}}
+//         >
+//         <Card>
+//           <li 
+//           key={x.id}>
+//             <div className={classes.image}>
+//               <img src={x.img} alt={x.title} />
+//             </div>
+//             <div className={classes.action}>
+//               <button>
+//                 <Link to={x.link}>Check it out</Link>
+//               </button>
+//             </div>
+//             <p>{x.title}</p>
+//           </li>
+//         </Card>
+//         </motion.div>
+//       ):(
+//         <div>
+//       <Card>
+//         <li 
+//         key={x.id}
+//         initial={{x:-300}}
+//         whileInView={{x:0,transition:{delay:1,type:"spring",stiffness:100}}}
+//         >
+//           <div className={classes.image}>
+//             <img src={x.img} alt={x.title} />
+//           </div>
+//           <div className={classes.action}>
+//             <button>
+//               <Link to={x.link}>Check it out</Link>
+//             </button>
+//           </div>
+//           <p>{x.title}</p>
+//         </li>
+//       </Card>
+//       </div>
+//       )}  
+      
+//       </Fragment>
+//     );
+//   });
+
+//   return (
+//     <Fragment>
+//       {isMobile768px ? (
+//         <div className={classes.projectContainer}>
+//           <h2>Projects</h2>
+//           <ul>{data}</ul>
+//         </div>
+//       ) : (
+//         <motion.div
+//           className={classes.projectContainer}
+//           initial={{ x: "-1200px" }}
+//           animate={{
+//             x: 0,
+//             transition: { delay: 1, type: "spring", stiffness: 100 },
+//           }}>
+//           <h2>Projects</h2>
+//           <ul>{data}</ul>
+//         </motion.div>
+//       )}
+//     </Fragment>
+//   );
+// };
+
+// export default Projects;
+
+
+
+//THIS IS EQUALLY VERY GOOD. ITS SIMILAR TO WHAT WAS USED IN MAX'S TUTORIAL. BUT WENT WITH TANSA'S INSTEAD.
+/*MEDIA QUERIES:
+THE FIRST CONDITION IS MEANT FOR SCREEN SIZES THAT ARE BETWEEN 410PX AND 640PX LIKE THE IPHONEXR. IT (max-width:640px) APPEARS ONTOP, SO IT WILL WORK, ELSE IT WON'T */
+
+ @media screen and (max-width:640px){
+    .projectContainer{
+        width: 100%;
+    }
+    .projectContainer ul{
+        display: flex;
+        flex-direction: column;
+        
+        gap: 12rem;
+        width: 100%;
+    }
+    .projectContainer li{
+        width: 100%;
+    }
+    .action button{
+        border-radius: 2rem;
+        padding: 1rem;
+        background-color: black;
+    }
+    .action button:hover{
+        background-color: green;
+        color: yellow;
+    }
+    
+}   
+
+
+ @media screen and (max-width:410px){
+    .projectContainer{
+        width: 100%;
+        
+    }
+    .projectContainer ul{
+        display: flex;
+        flex-direction: column;
+        
+        gap: 8.5rem;
+        width: 100%;
+    }
+    .projectContainer li{
+        width: 100%;
+    }
+    .action button{
+        border-radius: 2rem;
+        padding: 1rem;
+        background-color: black;
+    }
+    .action button:hover{
+        background-color: green;
+        color: yellow;
+    }
+    
+}
+ 

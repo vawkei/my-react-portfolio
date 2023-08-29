@@ -1,6 +1,9 @@
-
-.container h2 {
+.container{
+  margin-top: 6rem;
+}
+.container > h2 {
   text-align: center;
+  margin-top: 2rem;
 }
 .skills {
   width: 100%;
@@ -10,9 +13,19 @@
   background-position: center;
   background-size: 99.5%;
   background-color: darkgreen;
+  margin-top: 0rem;
+  /* animation-name: jump;
+  animation-duration: 5s;
   
+  animation-iteration-count: infinite;
+  animation-delay: 1s;
+  transition: ease-in-out; */
 } 
-
+.key{
+  display: flex;
+  gap: 8rem;
+  margin-top: 2rem;
+}
 
 
 .skills svg {
@@ -25,7 +38,7 @@
   justify-content: center;
   gap: 3rem;
 
-  padding: 2rem;
+  padding: 1rem;
 }
 .frontend-skills ul {
   padding: 0;
@@ -34,6 +47,9 @@
 }
 .frontend-skills li {
   margin-bottom: 0.5rem;
+}
+.frontend-skills span {
+  color: greenyellow;
 }
 
 
@@ -45,6 +61,7 @@
   justify-content: center;
   margin: 0;
   padding: 0;
+  padding-top: 1rem;
   gap: 3rem;
   /*margin-left: 11rem; */
   text-align: left;
@@ -53,8 +70,16 @@
 .backend-skills li {
   margin-bottom: 0.5rem;
 }
+.backend-skills span {
+  color: yellowgreen;
+}
 
-@media screen and (max-width: 768px) {
+@keyframes jump {
+  from{transform: translateY(0);}
+  to{transform: translateY(50px);}
+}
+
+@media screen and (max-width: 640px) {
   .skills {
     width: 100%;
     text-align: center;
@@ -63,12 +88,20 @@
     background-size: 150%;
     background-color: darkgreen;
   }
+  .key{
+    display: none;
+  }
   .container {
-    margin-top: 3rem;
+    margin-top: 1rem;
     width: 100%;
   }
+  
+.container > h2 {
+  text-align: center;
+  margin-top: 6rem;
+}
   .frontend-skills-container {
-    margin-top: 3rem;
+    margin-top: 1rem;
     width: 100%;
   }
   .frontend-skills {
@@ -84,6 +117,9 @@
   .backend-skills {
     width: 100%;
   }
+  .backend-skills-container{
+    margin-top: -2rem;
+  }
   .backend-skills ul {
     padding-top: 1rem;
     display: flex;
@@ -93,3 +129,4 @@
   }
   
 }
+                               

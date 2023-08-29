@@ -1,9 +1,12 @@
 import classes from "./Home.module.css";
-import profilePix from "../../assets/profilepix.jpg";
+import profilePix from "../../assets/profilepix-removebg.png";
+import profilepix from "../../assets/profilepix.jpg";
 import { motion } from "framer-motion";
 import { AiFillLinkedin } from "react-icons/ai";
 import { AiFillGithub } from "react-icons/ai";
 import { Link } from "react-router-dom";
+import {useMediaQuery} from "react-responsive";
+
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -21,7 +24,13 @@ const iconVariants = {
   visible: { opacity: 1},
 };
 
+
+
+
 const Home = () => {
+
+  const isMobile = useMediaQuery({maxWidth:640});
+
   return (
     <div className={classes.home}>
       <motion.div
@@ -57,9 +66,17 @@ const Home = () => {
           <p>You are welcome to my portfolio.</p>
         </div>
       </div>
-      <div className={classes["image-container"]}>
+
+      {isMobile ? (
+        <div className={classes["image-container"]}>
         <img src={profilePix} alt={"profilePix"} />
       </div>
+      ):(
+        <div className={classes["image-container"]}>
+        <img src={profilepix} alt={"profilepix"} />
+      </div>
+      )}
+      
     </div>
   );
 };

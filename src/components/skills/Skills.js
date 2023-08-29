@@ -3,6 +3,13 @@ import {motion} from "framer-motion";
 
 
 const Skills = () => {
+
+  const lessThanZero= "<0";
+  const zeroTo39 = "0-39";
+  const fortyTo59 = "40-59";
+  const sixtyTo79 = "60-79";
+  const eigthyTo100 = ">80";
+
   return (
     
       <motion.div 
@@ -11,6 +18,13 @@ const Skills = () => {
       animate={{y:0,transition:{type:"spring",stiffness:100}}}
       >
         <h2>Skills</h2>
+        <div className={classes.key}>
+          <p>{lessThanZero} Novice</p>
+          <p>{zeroTo39} Beginner</p>
+          <p>{fortyTo59} Intermediate</p>
+          <p>{sixtyTo79} Advanced</p>
+          <p>{eigthyTo100} Expert</p>
+        </div>
         <div className={classes.skills}>
           <div className={classes["frontend-skills-container"]}>
             <h2>Frontend Skills and Tools</h2>
@@ -19,7 +33,7 @@ const Skills = () => {
                 <li>
                   <div>
                     <p>Html</p>
-                    <span>Experienced</span>
+                    <span>Expert</span>
                   </div>
                 </li>
                 <li>
@@ -52,7 +66,7 @@ const Skills = () => {
                 <li>
                   <div>
                     <p>Tailwind</p>
-                    <span>Experienced</span>
+                    <span>Advanced</span>
                   </div>
                 </li>
               </ul>
@@ -73,7 +87,7 @@ const Skills = () => {
                 <li>
                   <div>
                     <p>Nextjs</p>
-                    <span>Intermediate</span>
+                    <span>Advanced</span>
                   </div>
                 </li>
               </ul>

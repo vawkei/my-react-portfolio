@@ -94,8 +94,8 @@ const Contact = () => {
               <motion.form
                 onSubmit={submitHandler}
                 ref={form}
-                initial={{ x: -600 }}
-                animate={{
+                initial={{ x: "-90vw" }}
+                whileInView={{
                   x: 0,
                   transition: {
                     delay: 1,
@@ -178,8 +178,19 @@ const Contact = () => {
               </motion.form>
             </div>
 
-            <div
+            <motion.div
               className={classes["address-section"]}
+              initial={{ x: "-90vw" }}
+                whileInView={{
+                  x: 0,
+                  transition: {
+                    delay: 1,
+                    duration: 6,
+                    ease: "easeInOut",
+                    type: "spring",
+                    stiffness: 100,
+                  },
+                }}
               >
               <h4>Address</h4>
               <div className={classes.paragraph}>
@@ -190,7 +201,7 @@ const Contact = () => {
                 <AiOutlineMail />
                 <p>vokes9810@gmail.com</p>
               </div>
-            </div>
+            </motion.div>
           </div>
         </Fragment>
       ) : (
