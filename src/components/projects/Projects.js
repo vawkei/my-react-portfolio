@@ -2,7 +2,7 @@ import classes from "./Projects.module.css";
 import { DUMMYPROJECTS } from "./ProjectData";
 import { Link } from "react-router-dom";
 import Card from "../../ui/card/Card";
-import { motion } from "framer-motion";
+import { easeInOut, motion } from "framer-motion";
 import { useMediaQuery } from "react-responsive";
 import { Fragment } from "react";
 
@@ -18,7 +18,9 @@ const Projects = () => {
             whileInView={{
               x: 0,
               transition: { delay: 1, type: "spring", stiffness: 500 },
-            }}>
+            }}
+            exit={{x:"-100vw",transition:{ease:easeInOut}}}
+            >
             <div className={classes.image}>
               <img src={x.img} alt={x.title} />
             </div>
@@ -64,7 +66,9 @@ const Projects = () => {
           animate={{
             x: 0,
             transition: { delay: 1, type: "spring", stiffness: 200 },
-          }}>
+          }}
+          exit={{x:"-100vw",transition:{ease:"easeInOut"}}}
+          >
           <h2>Projects</h2>
           <ul>{data}</ul>
         </motion.div>

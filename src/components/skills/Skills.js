@@ -17,16 +17,23 @@ const Skills = () => {
       initial={{y:900}}
       animate={{y:0,transition:{type:"spring",stiffness:100}}}
       >
-        <h2>Skills</h2>
-        <div className={classes.key}>
+        <motion.h2
+         exit={{y:"100vh",transition:{delay:4.5, type:"spring",stiffness:500}}}
+        >Skills</motion.h2>
+        <motion.div className={classes.key}
+          exit={{x:"100vw",transition:{duration:3,ease:"easeInOut"}}}
+        >
           <p>{lessThanZero} Novice</p>
           <p>{zeroTo39} Beginner</p>
           <p>{fortyTo59} Intermediate</p>
           <p>{sixtyTo79} Advanced</p>
           <p>{eigthyTo100} Expert</p>
-        </div>
+        </motion.div>
         <div className={classes.skills}>
-          <div className={classes["frontend-skills-container"]}>
+          <motion.div 
+          className={classes["frontend-skills-container"]}
+          exit={{x:"-100vw",transition:{duration:3, delay:2,ease:"easeInOut"}}}
+          >
             <h2>Frontend Skills and Tools</h2>
             <div className={classes["frontend-skills"]}>
               <ul>
@@ -92,9 +99,12 @@ const Skills = () => {
                 </li>
               </ul>
             </div>
-          </div>
+          </motion.div>
 
-          <div className={classes["backend-skills-container"]}>
+          <motion.div 
+          className={classes["backend-skills-container"]}
+          exit={{x:"100vw",transition:{delay:4,ease:"easeInOut"}}}
+          >
             <h2>Backend Skills and Tools</h2>
             <div className={classes["backend-skills"]}>
               <ul>
@@ -118,7 +128,7 @@ const Skills = () => {
                 </li>
               </ul>
             </div>
-          </div>
+          </motion.div>
         </div>
       </motion.div>
   );

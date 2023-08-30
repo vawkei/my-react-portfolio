@@ -104,7 +104,9 @@ const Contact = () => {
                     type: "spring",
                     stiffness: 100,
                   },
-                }}>
+                }}
+                exit={{y:"90vh",transition:{ease:"easeInOut"}}}
+                >
                 <h4>Contact Form</h4>
 
                 <div
@@ -191,6 +193,7 @@ const Contact = () => {
                     stiffness: 100,
                   },
                 }}
+                // exit={{x:"90vw",transition:{ease:"easeInOut"}}}
               >
               <h4>Address</h4>
               <div className={classes.paragraph}>
@@ -207,7 +210,10 @@ const Contact = () => {
       ) : (
         <Fragment>
           <h2>Contact</h2>
-          <div className={classes.container}>
+          <motion.div 
+          className={classes.container}
+          exit={{x:"90vw",transition:{ease:"easeInOut"}}}
+          >
             <div className={classes["contact-form"]}>
               <motion.form
                 onSubmit={submitHandler}
@@ -319,7 +325,7 @@ const Contact = () => {
                 <p>vokes9810@gmail.com</p>
               </div>
             </motion.div>
-          </div>
+          </motion.div>
         </Fragment>
       )}
     </div>
