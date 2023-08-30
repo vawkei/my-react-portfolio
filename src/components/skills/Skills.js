@@ -16,12 +16,14 @@ const Skills = () => {
       className={classes.container}
       initial={{y:900}}
       animate={{y:0,transition:{type:"spring",stiffness:100}}}
+      exit={{x:"-100vw",transition:{delay:5,type:'spring',stiffness:500}}}
       >
         <motion.h2
          exit={{y:"100vh",transition:{delay:4.5, type:"spring",stiffness:500}}}
         >Skills</motion.h2>
         <motion.div className={classes.key}
-          exit={{x:"100vw",transition:{duration:3,ease:"easeInOut"}}}
+          exit={{x:"300vw",transition:{duration:3,ease:"easeInOut"}}}
+          
         >
           <p>{lessThanZero} Novice</p>
           <p>{zeroTo39} Beginner</p>
@@ -103,7 +105,8 @@ const Skills = () => {
 
           <motion.div 
           className={classes["backend-skills-container"]}
-          exit={{x:"100vw",transition:{delay:4,ease:"easeInOut"}}}
+          exit={{x:"300vw",transition:{delay:4,ease:"easeInOut"}}}
+          
           >
             <h2>Backend Skills and Tools</h2>
             <div className={classes["backend-skills"]}>
