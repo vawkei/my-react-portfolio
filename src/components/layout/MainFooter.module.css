@@ -33,3 +33,9 @@
   cursor: pointer;
 }
 .footer p:hover{color: rebeccapurple;}
+
+@media screen and (max-width:640px){
+  .footer{
+    margin-top: -3rem;
+  }
+}

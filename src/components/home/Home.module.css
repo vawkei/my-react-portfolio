@@ -52,6 +52,7 @@ span{
     .home{
         width: 100%;
         display: flex;
+        /* margin-top: -1rem; */
     }
     .name-container{
         z-index: 300;
@@ -68,3 +69,7 @@ span{
         z-index: 100;
     } 
 }
+
+/* @media screen and (max-width:360px){
+
+} */

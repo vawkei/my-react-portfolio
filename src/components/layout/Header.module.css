@@ -65,8 +65,14 @@ a{
         border-radius: 8px;
         z-index: 2000;
     }
-    
+    .header nav ul li a:hover{
+        color: white;
+        cursor: pointer;
+    }
     .active{
-        color: yellow;
+        color:white;
+        background-color: black;
+        border-radius: 12px;
+        padding: 0.5rem 0.9rem;
     }
 }

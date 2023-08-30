@@ -43,7 +43,8 @@ const Header = () => {
                   type: "spring",
                   stiffness: 500,
                 },
-              }}>
+              }}
+              >
               HowZ
             </motion.h1>
           </div>
