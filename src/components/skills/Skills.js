@@ -16,7 +16,7 @@ const Skills = () => {
       className={classes.container}
       initial={{y:900}}
       animate={{y:0,transition:{type:"spring",stiffness:100}}}
-      exit={{x:"-120vw",transition:{delay:5,type:'spring',stiffness:500}}}
+      exit={{x:"-122vw",transition:{delay:5,type:'spring',stiffness:500}}}
       >
         <motion.h2
          exit={{y:"100vh",transition:{delay:4.5, type:"spring",stiffness:500}}}
