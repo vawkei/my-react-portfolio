@@ -95,7 +95,7 @@ const Skills = () => {
                 </li>
                 <li>
                   <div>
-                    <p>Nextjs</p>
+                    <p>WordPress</p>
                     <span>Advanced</span>
                   </div>
                 </li>
@@ -110,7 +110,7 @@ const Skills = () => {
           >
             <h2>Backend Skills and Tools</h2>
             <div className={classes["backend-skills"]}>
-              <ul>
+              <ul >
                 <li>
                   <div>
                     <p>Firebase</p>
@@ -120,15 +120,24 @@ const Skills = () => {
                 <li>
                   <div>
                     <p>Nodejs</p>
-                    <span>Beginner</span>
+                    <span>Intermediate</span>
                   </div>
                 </li>
                 <li>
                   <div>
                     <p>Expressjs</p>
-                    <span>Novice</span>
+                    <span>Advanced</span>
                   </div>
                 </li>
+              </ul>
+              <ul >
+              <li>
+                  <div>
+                    <p>MongoDB</p>
+                    <span>Advanced</span>
+                  </div>
+                </li>
+              
               </ul>
             </div>
           </motion.div>

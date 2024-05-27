@@ -14,7 +14,7 @@ const Projects = () => {
       <Fragment key={x.id}>
         {isMobile ? (
           <motion.li
-            initial={{ x: "-95vw" }}
+            initial={{ x: "-85vw" }}
             whileInView={{
               x: 0,
               transition: { delay: 1, type: "spring", stiffness: 500 },
@@ -30,6 +30,7 @@ const Projects = () => {
               </button>
             </div>
             <p>{x.title}</p>
+            <p>{x.desc}</p>
           </motion.li>
         ) : (
           <div>
@@ -44,6 +45,7 @@ const Projects = () => {
                   </button>
                 </div>
                 <p>{x.title}</p>
+                <p>{x.desc}</p>
               </li>
             </Card>
           </div>

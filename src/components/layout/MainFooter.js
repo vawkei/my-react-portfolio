@@ -50,7 +50,7 @@ const MainFooter = () => {
           </Link>
         </motion.div>
       </motion.div>
-      <p>&copy;2023 All Rights Reserved.</p>
+      <p>&copy;2024 All Rights Reserved.</p>
     </div>
   );
 };

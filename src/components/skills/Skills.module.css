@@ -58,6 +58,7 @@
   padding-top: 1rem;
   display: flex;
   align-items: center;
+  /* align-items: center; */
   justify-content: center;
   margin: 0;
   padding: 0;
@@ -67,17 +68,20 @@
   text-align: left;
   list-style: none;
 }
+
+
 .backend-skills li {
   margin-bottom: 0.5rem;
+  
 }
 .backend-skills span {
   color: yellowgreen;
 }
 
-@keyframes jump {
+/* @keyframes jump {
   from{transform: translateY(0);}
   to{transform: translateY(50px);}
-}
+} */
 
 @media screen and (max-width: 640px) {
   .skills {

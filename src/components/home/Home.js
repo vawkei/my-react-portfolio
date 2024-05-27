@@ -60,8 +60,7 @@ const Home = () => {
         <div className={classes["name-description"]}>
           <p>{`${`I am Voke, but go by the name HouseofWebZ <HowZ/ >.`}`} </p>
           <p>
-            I am a front-end developer, who is obsessed about becoming a
-            full-stack developer.
+            I am a full-stack web developer, who is obsessed about the M.E.R.N Javascript technologies.
           </p>
           <p>You are welcome to my portfolio.</p>
         </div>
