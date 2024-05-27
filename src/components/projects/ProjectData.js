@@ -1,6 +1,7 @@
 
 import image1 from "../../assets/another kendra's place.png";
 import image2 from "../../assets/Theresa's .png";
+import image3 from "../../assets/Sams.png";
 
 export const DUMMYPROJECTS = [
     {
@@ -19,7 +20,7 @@ export const DUMMYPROJECTS = [
     },
     {
         id:"p3",
-        img:image2,
+        img:image3,
         link:"https://samsapp.onrender.com",
         title:"Sams",
         desc:"Fullstack. M.E.R.N"
