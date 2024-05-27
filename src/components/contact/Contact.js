@@ -202,7 +202,7 @@ const Contact = () => {
               </div>
               <div className={classes.paragraph}>
                 <AiOutlineMail />
-                <p>vokes9810@gmail.com</p>
+                <p>vawkeicodewebz@gmail.com</p>
               </div>
             </motion.div>
           </div>
