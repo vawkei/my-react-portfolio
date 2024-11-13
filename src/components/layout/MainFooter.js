@@ -3,8 +3,9 @@ import { motion } from "framer-motion";
 import {
   AiOutlineInstagram,
   AiOutlineTwitter,
-  AiOutlineLinkedin,
+  // AiOutlineLinkedin,
 } from "react-icons/ai";
+import { FaDev } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 
 const containerVariants = {
@@ -37,14 +38,19 @@ const MainFooter = () => {
         </motion.div>
 
         <motion.div variants={socialsVariants}>
-          <Link to={"https://twitter.com/lordofreact"}>
+          <Link to={"https://twitter.com/vawkeicodewebz"}>
             <AiOutlineTwitter className={`${classes.twit} ${classes.social}`} />
           </Link>
         </motion.div>
 
         <motion.div variants={socialsVariants}>
-          <Link to={"https://www.linkedin.com/in/voke-bernard/"}>
+          {/* <Link to={"https://www.linkedin.com/in/voke-bernard/"}>
             <AiOutlineLinkedin
+              className={`${classes.linked} ${classes.social}`}
+            />
+          </Link> */}
+          <Link to={"https://dev.to/voke_vawkei"}>
+            <FaDev 
               className={`${classes.linked} ${classes.social}`}
             />
           </Link>

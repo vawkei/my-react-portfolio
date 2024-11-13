@@ -2,7 +2,8 @@ import classes from "./Home.module.css";
 import profilePix from "../../assets/profilepix-removebg.png";
 import profilepix from "../../assets/profilepix.jpg";
 import { motion } from "framer-motion";
-import { AiFillLinkedin } from "react-icons/ai";
+// import { AiFillLinkedin } from "react-icons/ai";
+import { FaDev } from "react-icons/fa6";
 import { AiFillGithub } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import {useMediaQuery} from "react-responsive";
@@ -39,9 +40,14 @@ const Home = () => {
         initial="hidden"
         animate="visible">
         
-        <Link to="https://www.linkedin.com/in/voke-bernard/">
+        {/* <Link to="https://www.linkedin.com/in/voke-bernard/">
           <motion.div variants={iconVariants}>
             <AiFillLinkedin size={22} className={classes.icon} />
+          </motion.div>
+        </Link> */}
+        <Link to="https://www.linkedin.com/in/voke-bernard/">
+          <motion.div variants={iconVariants}>
+            <FaDev size={22} className={classes.icon} />
           </motion.div>
         </Link>
 
