@@ -6,8 +6,7 @@ import { motion } from "framer-motion";
 import { FaDev } from "react-icons/fa6";
 import { AiFillGithub } from "react-icons/ai";
 import { Link } from "react-router-dom";
-import {useMediaQuery} from "react-responsive";
-
+import { useMediaQuery } from "react-responsive";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -21,16 +20,12 @@ const containerVariants = {
   },
 };
 const iconVariants = {
-  hidden: { opacity: 0, },
-  visible: { opacity: 1},
+  hidden: { opacity: 0 },
+  visible: { opacity: 1 },
 };
 
-
-
-
 const Home = () => {
-
-  const isMobile = useMediaQuery({maxWidth:640});
+  const isMobile = useMediaQuery({ maxWidth: 640 });
 
   return (
     <div className={classes.home}>
@@ -39,7 +34,6 @@ const Home = () => {
         variants={containerVariants}
         initial="hidden"
         animate="visible">
-        
         {/* <Link to="https://www.linkedin.com/in/voke-bernard/">
           <motion.div variants={iconVariants}>
             <AiFillLinkedin size={22} className={classes.icon} />
@@ -64,9 +58,16 @@ const Home = () => {
           </h1>
         </div>
         <div className={classes["name-description"]}>
-          <p>{`${`I am Voke, but go by the name HouseofWebZ <HowZ/ >.`}`} </p>
+          <p>{`I am Voke, but go by the name HouseofWebZ <HowZ/ >.`} </p>
           <p>
-            I am a full-stack web developer, who is obsessed about the M.E.R.N Javascript technologies.
+            I am a Full-stack{" "}
+            <span style={{ color: "yellow", fontWeight: "bold" }}>Web</span> and{" "}
+            <span style={{ color: "yellow", fontWeight: "bold" }}>Mobile</span>{" "}
+            App developer deeply invested in M.E.R.N, MySQL with TypeORM, and{" "}
+            <span style={{ color: "yellow", fontWeight: "bold" }}>
+              React Native
+            </span>{" "}
+            for web and mobile app development.
           </p>
           <p>You are welcome to my portfolio.</p>
         </div>
@@ -74,14 +75,13 @@ const Home = () => {
 
       {isMobile ? (
         <div className={classes["image-container"]}>
-        <img src={profilePix} alt={"profilePix"} />
-      </div>
-      ):(
+          <img src={profilePix} alt={"profilePix"} />
+        </div>
+      ) : (
         <div className={classes["image-container"]}>
-        <img src={profilepix} alt={"profilepix"} />
-      </div>
+          <img src={profilepix} alt={"profilepix"} />
+        </div>
       )}
-      
     </div>
   );
 };

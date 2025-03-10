@@ -1,17 +1,25 @@
 .projectContainer{
     width: 100%;
+    min-width: 20rem;
     /* margin-top: 6rem; */
     margin-top: 3rem;
+    border: solid green 2px;
+    padding-bottom: 2rem;
 }
 .projectContainer h2{
     text-align: center;
     margin-top: 2rem;
+    
 }
 .projectContainer ul{
+    width: 100%;
     padding: 0;
     margin: 0;
     list-style: none;
     display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
     gap: 1rem;
 }
 .image{
@@ -53,18 +61,20 @@
 
     .projectContainer{
         width: 100%;
+        border: none;
+        padding-bottom: 0rem;
         /* background-color: blueviolet; */
     }
     .projectContainer h2{
         text-align: center;
-        margin-top: 5rem;
+        margin-top: 6rem;
     }
     
     .projectContainer ul{
         display: flex;
         flex-direction: column;
-        margin-top: 0rem;
-        gap: 12rem;
+        background-color: green;
+        gap: 1rem;
         width: 100%;
     }
     .image{
@@ -95,27 +105,30 @@
  
 /* MEDIA QUERIES */
 /* THIS IS TARGETING SCREEN SIZE THAT ARE SMALLER THAN 410PX. PHONES LIKE IPHONE 12 PRO */
-@media screen and (max-width:410px){
+@media screen and (max-width:409px){
     .projectContainer{
         width: 100%;
+        border: none;
+        padding-bottom: 0rem;
         /* background-color: yellow; */
     }
     .projectContainer h2{
         text-align: center;
-        margin-top: 2rem;
+        margin-top: 6rem;
     }
     .projectContainer ul{
         display: flex;
         flex-direction: column;
-        
-        margin-top: 0rem;
-        gap: 13rem;
+        margin-top: 1rem;
+        /* background-color: gray; */
+        /* gap: 12rem; */
+        gap: 1rem;
         width: 100%;
     }
     
     .projectContainer li{
         width: 100%;
-        
+        margin-top: 5rem;
     }
     .action button{
         border-radius: 2rem;
@@ -144,10 +157,11 @@
     .projectContainer ul{
         display: flex;
         flex-direction: column;
-        gap: 12rem;
-        margin-top: 0rem;
+        margin-top: 5rem;
+        background-color: gray;
+        /* gap: 12rem; */
+        gap: 1rem;
         width: 100%;
-        
     }
     .image{
         width: 100%;

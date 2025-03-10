@@ -3,6 +3,7 @@
     /* height: 100%; */
     /* padding: 1.5rem; */
     margin-top: 3rem;
+    min-width: 20rem;
 }
 .container h2{
     text-align: center;

@@ -6,6 +6,7 @@
     height: 5rem;
     background-color: black;
     width: 100%;
+    min-width: 20rem;
     position: fixed;
     z-index: 2000;
     top: 0;
@@ -20,6 +21,7 @@
     padding: 0;
     margin: 0;
     list-style: none;
+    min-width: 20rem;
 }
 .header nav ul li{
     margin-right: 1rem;
@@ -64,6 +66,7 @@ a{
         padding: 1rem;
         border-radius: 8px;
         z-index: 2000;
+        /* margin-bottom: 6rem; */
     }
     .header nav ul li a:hover{
         color: white;
@@ -74,5 +77,22 @@ a{
         background-color: black;
         border-radius: 12px;
         padding: 0.5rem 0.9rem;
+    }
+}
+
+@media screen and (min-width:410px) and (max-width:639px){
+    .header nav ul{
+        position: fixed;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        left: 0%;
+        right: 0%;
+        bottom: 2rem;    
+        /* background-color: orange; */
+        padding: 1rem;
+        border-radius: 8px;
+        z-index: 2000;
+        margin-bottom: 2rem;
     }
 }

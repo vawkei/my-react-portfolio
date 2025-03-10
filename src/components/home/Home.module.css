@@ -1,6 +1,7 @@
 .home{
     display: flex;
     width: 100%;
+    min-width: 20rem;
     align-items: center;
     justify-content: space-around;
     animation-name:fadeIn;
@@ -51,8 +52,10 @@ span{
 @media screen and (max-width:640px){
     .home{
         width: 100%;
+        /* min-width: unset; */
+        /* margin-top: 12rem; */
         display: flex;
-        /* margin-top: -1rem; */
+        /* background-color: red; */
     }
     .name-container{
         z-index: 300;
@@ -70,6 +73,11 @@ span{
     } 
 }
 
-/* @media screen and (max-width:360px){
-
-} */
+@media screen and (min-width:410px) and (max-width:639px){
+    .home{
+        width: 100%;
+        margin-top: 10rem;
+        display: flex;
+        /* background-color: yellow; */
+    }
+}

@@ -95,7 +95,7 @@ const Skills = () => {
                 </li>
                 <li>
                   <div>
-                    <p>WordPress</p>
+                    <p className={classes["react-native"]}>React-Native</p>
                     <span>Advanced</span>
                   </div>
                 </li>
@@ -134,6 +134,12 @@ const Skills = () => {
               <li>
                   <div>
                     <p>MongoDB</p>
+                    <span>Advanced</span>
+                  </div>
+                </li>
+              <li>
+                  <div>
+                    <p>Mysql typeorm</p>
                     <span>Advanced</span>
                   </div>
                 </li>

@@ -14,7 +14,7 @@ const Projects = () => {
       <Fragment key={x.id}>
         {isMobile ? (
           <motion.li
-            initial={{ x: "-85vw" }}
+            initial={{ x: "-90vw" }}
             whileInView={{
               x: 0,
               transition: { delay: 1, type: "spring", stiffness: 500 },

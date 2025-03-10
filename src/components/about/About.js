@@ -6,15 +6,15 @@ import { useMediaQuery } from "react-responsive";
 
 const line1 = "World! Say Hello to Voke.";
 const line2 =
-  "I am Voke, a Fullstack web developer who's known in the digital sphere as HowZ, HouseofwebZ.";
+  "I am Voke, a Fullstack web and moblie developer who's known in the digital sphere as HowZ, HouseofwebZ.";
 const line3 =
-  "I have a heart that beats for the frontend, but it usually feels alive whenever I immerse myself into backend technologies. I'm a web developer, who is really obsessed about the technologies used in building the web. Feel free to call it a beautiful obsession.";
-const line4 = "When I'm not writing web codes or studying web codes,";
+  "I have a heart that beats for the frontend, but it usually feels alive whenever I immerse myself into backend technologies. I'm a developer, who is really obsessed about the technologies used in building applications. Feel free to call it a beautiful obsession.";
+const line4 = "When I'm not writing codes for the web or mobile or studying them,";
 const line5 =
   "you'll find me watching football or immersed in captivating thrillers and crime TV series/movies.";
 const line6 = "Or I might be having a good time on a Playstation.";
 const line7 =
-  "I'm actively seeking a frontend developer role as a React.js developer or a backend developer role as an Express.js developer in an organization, where I can channel my creativity and skills into building stunning user interfaces and interesting backend architectures.";
+  "I'm actively seeking a frontend developer role, be it in web as a React.js developer or in mobile, as a React Native developer. Or a backend developer role as an Express.js developer in an organization, where I can channel my creativity and skills into building stunning user interfaces and interesting backend architectures.";
 const line8 =
   "Additionally, I'm open to freelance opportunities for Fullstack projects. Or frontend or backend opportunities that involve; React or Express.";
 const line9 = "And yeah! Coding is not a job to me, Coding is my life.";
